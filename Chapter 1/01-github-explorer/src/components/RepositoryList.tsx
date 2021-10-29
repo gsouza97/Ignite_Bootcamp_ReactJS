@@ -2,8 +2,14 @@ import { useEffect, useState } from "react";
 import RepositoryItem from "./RepositoryItem";
 import "../styles/repositories.scss";
 
+type Repository = {
+  name: string;
+  description: string;
+  html_url: string;
+};
+
 const RepositoryList = () => {
-  const [repositories, setRepositories] = useState([]);
+  const [repositories, setRepositories] = useState<Repository[]>([]);
 
   //   carregar perguntas
   useEffect(() => {
